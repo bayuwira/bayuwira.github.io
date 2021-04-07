@@ -15,15 +15,15 @@ Author URI : http://www.markups.io/
 .mu-simplefilter li.active,
 .mu-copy-right a:hover,
 .mu-copy-right a:focus {
-	color: #222831;
+	color: #121212;
 }
 
 .mu-send-msg-btn:hover,
 .mu-send-msg-btn:focus,
 .mu-social-media a:hover,
 .mu-social-media a:focus {
-	border: 1px solid #222831;
-	color: #222831;
+	border: 1px solid #121212;
+	color: #121212;
 }
 
 .mu-testimonial-slide .slick-dots li button:hover,
@@ -37,22 +37,22 @@ Author URI : http://www.markups.io/
 .mu-skill-progress-bar .mu-pro-bar,
 #mu-featured-slider,
 #mu-header.mu-fixed-nav {
-	background-color: #222831;
+	background-color: #121212;
 }
 
 .mu-contact-form .form-control:focus {
-	border: 1px solid #222831;    
+	border: 1px solid #121212;    
 } 
 
 .mu-resume-btn,
 .mu-service-icon-box {
-	border: 2px solid #222831;
-	color: #222831;
+	border: 2px solid #121212;
+	color: #121212;
 }
 
 
 .mu-pro-bar .proggress {
-	background-color: #222831 !important;
+	background-color: #121212 !important;
 }
 
 
