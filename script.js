@@ -18,9 +18,10 @@ function clearPin() {
 
 // Submit and check the pin
 function submitPin() {
-    //const correctPin = "07092024";
-    const correctPin = "123";
+    const correctPin = "07092024";
+    //const correctPin = "123";
     if (enteredPin === correctPin) {
+        document.getElementById("backgroundMusic").play();
         document.getElementById("passcodeScreen").classList.add("hidden");
         document.getElementById("confessionPage").classList.remove("hidden");
     } else {
