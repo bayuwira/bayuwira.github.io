@@ -19,6 +19,7 @@
     <!-- Passcode Screen -->
     <div id="passcodeScreen" class="passcode-screen">
         <h1 class="title">Tanggal pertama kali kita ketemu</h1>
+        <h1 class="title">(DDMMYYY)</h1>
         <input type="password" id="passcodeInput" placeholder="Enter PIN" maxlength="8" readonly>
         <div class="keypad">
             <button class="pin-button" onclick="addNumber('1')">1</button>
@@ -40,44 +41,46 @@
     <!-- Confession Screen -->
     <div class="container hidden" id="confessionPage">
         <div id="page1" class="message-page">
-            <h1 class="title" id="initialMessage">Gua mau ngomong sesuatu.</h1>
+            <h1 class="title" id="initialMessage">Gua mau ngomong sesuatu.😖</h1>
             <button class="reveal-button" onclick="nextPage()" id="revealButton">Lanjut</button>
         </div>
 
         <div id="page2" class="message-page hidden">
-            <h1 class="title">Kayaknya deketnya sampe sini aja ya.</h1>
+            <h1 class="title">Kayaknya deketnya sampe sini aja ya.😥</h1>
             <button class="reveal-button" onclick="nextPage()">Lanjut</button>
         </div>
     
         <div id="page3" class="message-page hidden">
-            <h1 class="title">Kenapa?.</h1>
+            <h1 class="title">Kenapa?.👀</h1>
             <button class="reveal-button" onclick="nextPage()">Lanjut</button>
         </div>
 
         <div id="page4" class="message-page hidden">
-            <h1 class="title">Soalnya?.</h1>
+            <h1 class="title">Soalnya?.🤨</h1>
             <button class="reveal-button" onclick="nextPage()">Lanjut</button>
         </div>
 
         <div id="page5" class="message-page hidden">
-            <h1 class="title">Yaa soalnya</h1>
+            <h1 class="title">Yaa soalnya😳</h1>
             <button class="reveal-button" onclick="nextPage()">Lanjut</button>
         </div>
     
         <div id="page6" class="message-page hidden">
-            <h1 class="title">Masak mau deket terus sih?</h1>
+            <h1 class="title">Masak mau deket terus sih?😝</h1>
             <button class="reveal-button" onclick="nextPage()">Lanjut</button>
         </div>
     
         <div id="confessionContainer" class="message-page hidden">
-            <h1 class="title">Langsung aja, aku suka sama kamu, pacaran yuk?</h1>
+            <h1 class="title" id="statement1">Langsung aja deh 😔</h1>
+            <h1 class="title" id="statement2">Kresna Parinamidi</h1>
+            <h1 class="title" id="statement3"><span class="highlight">pacaran yuk? 😊</span></h1>
             <div class="button-group">
                 <button class="answer-button yes-button" onclick="showYesMessage()">Mau</button>
                 <button class="answer-button no-button" onclick="handleNoClick()">Engga</button>
             </div>
             <p id="randomText" class="random-text"></p>
         </div>
-        <p id="message" class="hidden-message">Yeayy thankk you, kalau kamu terima langsung panggil aku <b>sayang</b> atau <b>yang</b> setelah ini ya 💖</p>
+        <p id="message" class="hidden-message">Yeayy thankk you, kalau kamu terima langsung panggil aku <span class="highlight">sayang</span> atau <span class="highlight">yang</span> langsung setelah baca pesan ini ya 💖</p>
     </div>
     
     <script src="script.js"></script>

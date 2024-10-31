@@ -112,6 +112,10 @@ function nextPage() {
 
 function showYesMessage() {
     // Display the final "yes" message
+   //document.querySelector("#confessionContainer h1.title").classList.add("hidden");
+    document.getElementById("statement1").classList.add("hidden");
+    document.getElementById("statement2").classList.add("hidden");
+    document.getElementById("statement3").classList.add("hidden");
     document.getElementById("message").classList.remove("hidden-message");
     document.querySelector(".button-group").style.display = "none";
     // Generate multiple floating emojis
