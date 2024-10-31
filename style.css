@@ -1,3 +1,9 @@
+.title, .random-text, .hidden-message {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -7,73 +13,94 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0e4d7;
     transition: background-color 1s ease;
+    overflow: hidden; /* Prevents unwanted scrolling */
 }
 
-.container {
-    text-align: center;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* Container styling */
+.container,
 .passcode-screen {
     text-align: center;
     background-color: #fff;
-    padding: 40px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 400px;
+    box-sizing: border-box;
 }
 
+/* Hidden element */
 .hidden {
     display: none;
 }
 
+/* Error message */
 .error-message {
     color: red;
     margin-top: 10px;
 }
 
+/* Button group styling */
 .button-group {
     margin-top: 20px;
 }
 
+/* Joyful button styling */
 .answer-button {
-    font-size: 18px;
-    padding: 10px 20px;
+    font-size: 16px;
+    padding: 12px 20px;
     margin: 5px;
     border: none;
     cursor: pointer;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 150px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    color: white;
+    position: relative;
+    overflow: hidden;
 }
 
 .yes-button {
-    background-color: #4CAF50;
-    color: white;
+    background: linear-gradient(135deg, #00b09b, #96c93d);
+    box-shadow: 0px 4px 12px rgba(0, 176, 155, 0.4);
 }
 
 .no-button {
-    background-color: #f44336;
-    color: white;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    box-shadow: 0px 4px 12px rgba(255, 95, 109, 0.4);
 }
 
-.shake {
-    animation: shake 0.5s;
+/* Button hover effects */
+.answer-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+.answer-button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Animated button effect */
+.answer-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.5s ease;
+    border-radius: 50px;
+}
+
+.answer-button:hover::after {
+    left: 100%;
+}
+
+/* Random text styling */
 .random-text {
     font-size: 18px;
     color: #ff4b47;
@@ -83,6 +110,7 @@ body {
     text-align: center;
 }
 
+/* Hidden message styling */
 .hidden-message {
     font-size: 24px;
     color: #ff4b47;
@@ -90,18 +118,10 @@ body {
     display: none;
 }
 
-.fade-in {
-    animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
+/* Reveal button styling */
 .reveal-button {
-    font-size: 18px;
-    padding: 12px 24px;
+    font-size: 16px;
+    padding: 10px 20px;
     color: white;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     border: none;
@@ -122,3 +142,119 @@ body {
     transform: translateY(1px);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        height: auto;
+    }
+
+    .container,
+    .passcode-screen {
+        width: 100%;
+        max-width: 90%;
+        padding: 20px 10px;
+    }
+
+    .answer-button,
+    .reveal-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .hidden-message {
+        font-size: 20px;
+    }
+
+    .random-text {
+        font-size: 16px;
+    }
+}
+
+/* Passcode screen styles */
+.passcode-screen {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+#passcodeInput {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.pin-button {
+    font-size: 18px;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.pin-button:hover {
+    transform: scale(1.05);
+}
+
+.pin-button:active {
+    transform: scale(0.95);
+}
+
+/* Error message */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.shake-effect {
+    animation: shake 0.5s ease;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 1rem;
+    opacity: 0;
+    animation: floatUp 2s ease-in-out forwards, scaleUp 2s ease-in-out forwards;
+    pointer-events: none; /* Disable interactions */
+}
+
+/* Animation for floating up */
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 0; }
+    to { transform: translateY(-100vh); opacity: 1; }
+}
+
+/* Animation for scaling up */
+@keyframes scaleUp {
+    from { transform: scale(0.5); opacity: 0.5; }
+    to { transform: scale(3); opacity: 0; }
+}
+
