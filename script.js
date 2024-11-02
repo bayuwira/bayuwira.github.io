@@ -30,6 +30,20 @@ function submitPin() {
     }
 }
 
+function sendResponse(response) {
+    const url = "https://script.google.com/macros/s/AKfycbzI-5o42cTICVch4kqziIdJqITltbNMfxmxbGw3mocsYQhjNjrKOWmaZAPp3hANJU3GKw/exec"; // Replace with your web app URL
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ response: response })
+    })
+    .then(response => response.json())
+    .then(data => console.log("Success:", data))
+    .catch(error => console.error("Error:", error));
+}
+
 
 function revealConfession() {
     document.getElementById("initialMessage").style.display = "none";
@@ -38,6 +52,7 @@ function revealConfession() {
 }
 
 function handleNoClick() {
+    sendResponse("Engga");
     const container = document.getElementById("confessionPage");
     
     // Add the shake effect class
@@ -46,8 +61,12 @@ function handleNoClick() {
 
     // Remove the shake effect class after the animation completes
     setTimeout(() => {
-        container.classList.remove("shake-effect");
-    }, 500); // Duration of the shake animation
+        document.body.style.transition = "background-color 1s ease";
+        document.body.style.backgroundColor = "black";
+        document.body.style.opacity = "0.5";
+
+        document.querySelectorAll("button").forEach(btn => btn.disabled = true);
+    }, 500);
 }
 
 function displayRandomText() {
@@ -111,6 +130,7 @@ function nextPage() {
 }
 
 function showYesMessage() {
+    sendResponse("Mau");
     // Display the final "yes" message
    //document.querySelector("#confessionContainer h1.title").classList.add("hidden");
     document.getElementById("statement1").classList.add("hidden");
